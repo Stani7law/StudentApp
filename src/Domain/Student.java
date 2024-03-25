@@ -5,6 +5,7 @@ package Domain;
 // Comparable позволяет определить логику измерения и добавляем мотод с
 // последующим переопределением compareTo.
 public class Student extends Person implements Comparable<Student> {
+    
     /** номер студента */
     private int id;
     /** генерированный номер */
@@ -21,39 +22,32 @@ public class Student extends Person implements Comparable<Student> {
         return id;
     }
 
+    
+
     @Override
     public String toString() {
         return "Student [id = " + id +
-                ", Name = " + super.getName() +
-                ", Age = " + super.getAge() + "]";
+                ", Name = " + getName() +
+                ", Age = " + getAge() + "]";
     }
 
     // данный метод позволяет определить логику сравнения, но саму логику опысываем
     // самостоятельно
 
-    @Override
+    //@Override
     public int compareTo(Student o) {
         // сравнивать студентов будем по возрасту
-        System.out.println(super.getName() + " - " + o.getName());
-
         if (o.getAge() == super.getAge()) {
-
-            if (id == o.id) {
-                return 0;
-            }
+            return 0;
             
-            if (id > o.id) {
-                return 1;
-            } else {
-                return -1;
-            }
         }
-        if (o.getAge() > super.getAge()) {
+        if (o.getAge() > getAge()) {
             return -1;
         } else {
             return 1;
         }
-
     }
+
+    
 
 }

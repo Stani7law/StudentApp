@@ -2,7 +2,7 @@ package Domain;
 
 public class Person {
     /** Имя посетителя */
-    protected static String name;
+    private String name;
     /** Возраст посетителя */
     private int age;
 
@@ -39,7 +39,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person [name=" + name + ", age=" + age + "]";
+        return "Person [name = " + name + ", age = " + age + "]";
     }
 
 }
